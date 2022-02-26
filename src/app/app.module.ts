@@ -16,6 +16,12 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './views/home/home.component';
 import { MercadosComponent } from './views/mercados/mercados.component';
 import { ContadoresComponent } from './views/contadores/contadores.component';
+import { MercadosCreateComponent } from './components/mercados/mercados-create/mercados-create.component';
+import { MercadosEditComponent } from './components/mercados/mercados-edit/mercados-edit.component';
+import { MercadosDeleteComponent } from './components/mercados/mercados-delete/mercados-delete.component';
+import { ContadoresCreateComponent } from './components/contadores/contadores-create/contadores-create.component';
+import { ContadoresEditComponent } from './components/contadores/contadores-edit/contadores-edit.component';
+import { ContadoresDeleteComponent } from './components/contadores/contadores-delete/contadores-delete.component';
 
 
 @NgModule({
@@ -26,7 +32,13 @@ import { ContadoresComponent } from './views/contadores/contadores.component';
     FooterComponent,
     HomeComponent,
     MercadosComponent,
-    ContadoresComponent
+    ContadoresComponent,
+    MercadosCreateComponent,
+    MercadosEditComponent,
+    MercadosDeleteComponent,
+    ContadoresCreateComponent,
+    ContadoresEditComponent,
+    ContadoresDeleteComponent
   ],
   imports: [
     BrowserModule,
