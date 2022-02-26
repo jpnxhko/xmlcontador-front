@@ -3,7 +3,7 @@
 
     <mat-nav-list class="nav-list">
       <a mat-list-item>
-        <i class="material-icons">
+        <i class="material-icons" routerLink="mercados">
           storefront
         </i>
         Mercados
@@ -12,7 +12,7 @@
 
     <mat-nav-list>
       <a mat-list-item>
-        <i class="material-icons">
+        <i class="material-icons" routerLink="contadores">
           face
         </i>
         Contadores
@@ -20,4 +20,9 @@
     </mat-nav-list>
 
   </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
 </mat-sidenav-container>
