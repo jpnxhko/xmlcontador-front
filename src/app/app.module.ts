@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HomeComponent } from './views/home/home.component';
+import { MercadosComponent } from './views/mercados/mercados.component';
+import { ContadoresComponent } from './views/contadores/contadores.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { MatListModule } from '@angular/material/list';
     AppComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    MercadosComponent,
+    ContadoresComponent
   ],
   imports: [
     BrowserModule,
