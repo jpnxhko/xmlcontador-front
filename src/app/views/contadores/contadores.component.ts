@@ -13,7 +13,7 @@ export class ContadoresComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  criarContador(): void {
+  criarContadorRota(): void {
     this.router.navigate(['/contadores/create']);
   }
 }

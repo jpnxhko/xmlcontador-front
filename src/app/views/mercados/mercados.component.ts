@@ -13,7 +13,7 @@ export class MercadosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  criarMercado(): void {
+  criarMercadoRota(): void {
     this.router.navigate(['/mercados/create'])
   }
 }

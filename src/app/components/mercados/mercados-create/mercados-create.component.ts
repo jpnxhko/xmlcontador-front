@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { MercadosService } from './../mercados.service';
 
 @Component({
   selector: 'app-mercados-create',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MercadosCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mercadosService: MercadosService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  criarMercadoSnack(): void {
+    this.mercadosService.showMessage('Mercado criado com sucesso!');
+  }
+
+  cancelarMercado(): void {
+    this.router.navigate(['/mercados'])
+  }
 }

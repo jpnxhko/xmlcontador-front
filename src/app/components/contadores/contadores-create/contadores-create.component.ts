@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ContadoresService } from '../contadores.service';
 
 @Component({
   selector: 'app-contadores-create',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContadoresCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contadoresService: ContadoresService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  criarContadorSnack(): void {
+    this.contadoresService.showMessage('Contador criado com sucesso!');
+  }
+
+  cancelarContador(): void {
+    this.router.navigate(['/contadores'])
+  }
 }
