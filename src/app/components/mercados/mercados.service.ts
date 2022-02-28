@@ -24,4 +24,8 @@ export class MercadosService {
     create(mercados: Mercados): Observable<Mercados> {
       return this.http.post<Mercados>(this.baseUrl, mercados)
     }
+
+    read(): Observable<Mercados[]> {
+      return this.http.get<Mercados[]>(this.baseUrl)
+    }
 }

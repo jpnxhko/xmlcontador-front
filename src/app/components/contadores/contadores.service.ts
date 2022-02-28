@@ -24,4 +24,7 @@ export class ContadoresService {
     create(contadores: Contadores): Observable<Contadores> {
       return this.http.post<Contadores>(this.baseUrl, contadores)
     }
+    read(): Observable<Contadores[]> {
+      return this.http.get<Contadores[]>(this.baseUrl)
+    }
 }

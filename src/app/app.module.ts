@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule} from '@angular/material/table'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,8 @@ import { MercadosDeleteComponent } from './components/mercados/mercados-delete/m
 import { ContadoresCreateComponent } from './components/contadores/contadores-create/contadores-create.component';
 import { ContadoresEditComponent } from './components/contadores/contadores-edit/contadores-edit.component';
 import { ContadoresDeleteComponent } from './components/contadores/contadores-delete/contadores-delete.component';
+import { MercadosReadComponent } from './components/mercados/mercados-read/mercados-read.component';
+import { ContadoresReadComponent } from './components/contadores/contadores-read/contadores-read.component';
 
 
 @NgModule({
@@ -44,7 +47,9 @@ import { ContadoresDeleteComponent } from './components/contadores/contadores-de
     MercadosDeleteComponent,
     ContadoresCreateComponent,
     ContadoresEditComponent,
-    ContadoresDeleteComponent
+    ContadoresDeleteComponent,
+    MercadosReadComponent,
+    ContadoresReadComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ import { ContadoresDeleteComponent } from './components/contadores/contadores-de
     MatButtonModule,
     MatSnackBarModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
