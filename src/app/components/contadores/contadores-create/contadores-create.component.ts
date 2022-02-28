@@ -12,10 +12,10 @@ import { ContadoresService } from '../contadores.service';
 export class ContadoresCreateComponent implements OnInit {
 
   contadores: Contadores = {
-      "cpf": "cpfteste4",
-      "nome": "contador teste 4",
-      "contabilidade": "teste 4",
-      "email": "teste4@teste.com"
+      "cpf": "",
+      "nome": "",
+      "contabilidade": "",
+      "email": ""
   }
 
   constructor(private contadoresService: ContadoresService, private router: Router) { }

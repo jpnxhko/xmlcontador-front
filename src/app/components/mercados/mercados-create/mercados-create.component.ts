@@ -12,10 +12,10 @@ import { MercadosService } from './../mercados.service';
 export class MercadosCreateComponent implements OnInit {
 
   mercados: Mercados = {
-    "cnpj": "cnpjteste4",
-    "nomeFantasia": "fantasiateste4",
-    "razaoSocial": "socialteste4",
-    "responsavel": "responsavelteste4"
+    "cnpj": "",
+    "nomeFantasia": "",
+    "razaoSocial": "",
+    "responsavel": ""
   }
 
   constructor(private mercadosService: MercadosService, private router: Router) { }
