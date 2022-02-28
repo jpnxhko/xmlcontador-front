@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Mercados } from '../mercados.model';
 
 import { MercadosService } from './../mercados.service';
 
@@ -10,13 +11,23 @@ import { MercadosService } from './../mercados.service';
 })
 export class MercadosCreateComponent implements OnInit {
 
+  mercados: Mercados = {
+    "cnpj": "cnpjteste4",
+    "nomeFantasia": "fantasiateste4",
+    "razaoSocial": "socialteste4",
+    "responsavel": "responsavelteste4"
+  }
+
   constructor(private mercadosService: MercadosService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   criarMercadoSnack(): void {
-    this.mercadosService.showMessage('Mercado criado com sucesso!');
+    this.mercadosService.create(this.mercados).subscribe(() => {
+      this.mercadosService.showMessage('Mercado criado com sucesso!');
+      this.router.navigate(['/mercados'])
+    });
   }
 
   cancelarMercado(): void {

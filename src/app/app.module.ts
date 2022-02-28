@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './template/header/header.component';
-import { NavComponent } from './template/nav/nav.component';
-import { FooterComponent } from './template/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -15,6 +10,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './template/header/header.component';
+import { NavComponent } from './template/nav/nav.component';
+import { FooterComponent } from './template/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { MercadosComponent } from './views/mercados/mercados.component';
 import { ContadoresComponent } from './views/contadores/contadores.component';
@@ -46,12 +46,13 @@ import { ContadoresDeleteComponent } from './components/contadores/contadores-de
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
