@@ -24,7 +24,18 @@ export class ContadoresService {
     create(contadores: Contadores): Observable<Contadores> {
       return this.http.post<Contadores>(this.baseUrl, contadores)
     }
+
     read(): Observable<Contadores[]> {
       return this.http.get<Contadores[]>(this.baseUrl)
+    }
+
+    readById(id: string): Observable<Contadores> {
+      const url = `${this.baseUrl}/${id}`;
+      return this.http.get<Contadores>(url)
+    }
+
+    update(contadores: Contadores): Observable<Contadores> {
+      const url = `${this.baseUrl}/${contadores.id}`;
+      return this.http.put<Contadores>(url, contadores)
     }
 }
