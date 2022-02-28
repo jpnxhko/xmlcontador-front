@@ -1,4 +1,7 @@
+import { MercadosService } from './../mercados.service';
 import { Component, OnInit } from '@angular/core';
+import { Mercados } from '../mercados.model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mercados-edit',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MercadosEditComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  mercados: Mercados = {
+    "cnpj": "",
+    "nomeFantasia": "",
+    "razaoSocial": "",
+    "responsavel": ""
   }
 
+  constructor(private mercadosService: MercadosService, private router: Router, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.mercadosService.readById(<string>id).subscribe(mercados => {
+      this.mercados = mercados
+    });
+  }
+
+  alterarMercadoSnack(): void {
+    this.mercadosService.edit(this.mercados).subscribe(() => {
+      this.mercadosService.showMessage('Mercado alterado com sucesso!');
+      this.router.navigate(['/mercados'])
+    });
+  }
+
+  cancelarMercado(): void {
+    this.router.navigate(['/mercados'])
+  }
 }

@@ -25,11 +25,11 @@ const routes: Routes = [
     component: MercadosCreateComponent
   },
   {
-    path: "mercados/edit",
+    path: "mercados/edit/:id",
     component: MercadosEditComponent
   },
   {
-    path: "mercados/delete",
+    path: "mercados/delete/:id",
     component: MercadosDeleteComponent
   },
   {
@@ -41,11 +41,11 @@ const routes: Routes = [
     component: ContadoresCreateComponent
   },
   {
-    path: "contadores/edit",
+    path: "contadores/edit/:id",
     component: ContadoresEditComponent
   },
   {
-    path: "contadores/delete",
+    path: "contadores/delete/:id",
     component: ContadoresDeleteComponent
   }
 ];

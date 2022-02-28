@@ -1,1 +1,26 @@
-<p>mercados-edit works!</p>
+<mat-card class="mat-elevation-z8">
+  <mat-card-title>Alterar Mercado</mat-card-title>
+  <form>
+
+    <mat-form-field>
+      <input matInput placeholder="CNPJ" [(ngModel)]="mercados.cnpj" name="cnpj">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nome Fantasia" [(ngModel)]="mercados.nomeFantasia" name="nomeFantasia">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Razão Social" [(ngModel)]="mercados.razaoSocial" name="razaoSocial">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Responsável" [(ngModel)]="mercados.responsavel" name="responsavel">
+    </mat-form-field>
+
+  </form>
+</mat-card>
+
+<button mat-raised-button (click)="alterarMercadoSnack()" color="primary">Alterar</button>
+
+<button mat-raised-button (click)="cancelarMercado()" color="accent">Cancelar</button>

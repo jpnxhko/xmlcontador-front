@@ -34,7 +34,7 @@ export class ContadoresService {
       return this.http.get<Contadores>(url)
     }
 
-    update(contadores: Contadores): Observable<Contadores> {
+    edit(contadores: Contadores): Observable<Contadores> {
       const url = `${this.baseUrl}/${contadores.id}`;
       return this.http.put<Contadores>(url, contadores)
     }

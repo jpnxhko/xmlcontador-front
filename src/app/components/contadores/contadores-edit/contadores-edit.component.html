@@ -1,1 +1,26 @@
-<p>contadores-edit works!</p>
+<mat-card class="mat-elevation-z8">
+  <mat-card-title>Alterar Contador</mat-card-title>
+  <form>
+
+    <mat-form-field>
+      <input matInput placeholder="CPF" [(ngModel)]="contadores.cpf" name="cpf">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nome" [(ngModel)]="contadores.nome" name="nome">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Contabilidade" [(ngModel)]="contadores.contabilidade" name="contabilidade">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="e-mail" [(ngModel)]="contadores.email" name="email">
+    </mat-form-field>
+
+  </form>
+</mat-card>
+
+<button mat-raised-button (click)="alterarContadorSnack()" color="primary">Alterar</button>
+
+<button mat-raised-button (click)="cancelarContador()" color="accent">Cancelar</button>

@@ -1,6 +1,6 @@
 export interface Contadores {
 
-  id?: number
+  id?: String
   cpf: String
   nome: String
   contabilidade: String

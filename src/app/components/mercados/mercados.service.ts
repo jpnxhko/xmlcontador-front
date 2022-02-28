@@ -34,7 +34,7 @@ export class MercadosService {
       return this.http.get<Mercados>(url)
     }
 
-    update(mercados: Mercados): Observable<Mercados> {
+    edit(mercados: Mercados): Observable<Mercados> {
       const url = `${this.baseUrl}/${mercados.id}`;
       return this.http.put<Mercados>(url, mercados)
     }
