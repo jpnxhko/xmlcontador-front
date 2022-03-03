@@ -11,7 +11,7 @@ import { Mercados } from '../mercados.model';
 export class MercadosReadComponent implements OnInit {
 
   mercados: Mercados[] = [];
-  displayedColumns = ['cnpj','nomeFantasia','razaoSocial','responsavel', 'acoes'];
+  displayedColumns = ['id','cnpj','nomeFantasia','razaoSocial','responsavel', 'acoes'];
 
   constructor(private mercadosService: MercadosService) { }
 

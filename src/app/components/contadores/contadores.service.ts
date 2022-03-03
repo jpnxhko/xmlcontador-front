@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar} from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { catchError, EMPTY, map, Observable } from 'rxjs';
+
 import { Contadores } from './contadores.model';
 
 @Injectable({
@@ -9,20 +11,24 @@ import { Contadores } from './contadores.model';
 })
 export class ContadoresService {
 
-  baseUrl = "http://localhost:3001/contadores"
+  baseUrl: string = "http://localhost:3001/contadores"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-    showMessage(msg: string): void {
+    showMessage(msg: string, isError:boolean = false): void {
       this.snackBar.open(msg, 'X', {
         duration: 3000,
         horizontalPosition: "right",
-        verticalPosition: "top"
+        verticalPosition: "top",
+        panelClass: isError ? ['msg-error'] : ['msg-success']
       })
     }
 
     create(contadores: Contadores): Observable<Contadores> {
-      return this.http.post<Contadores>(this.baseUrl, contadores)
+      return this.http.post<Contadores>(this.baseUrl, contadores).pipe(
+        map((obj) => obj),
+        catchError(e => this.errorHandler(e))
+      );
     }
 
     read(): Observable<Contadores[]> {
@@ -37,5 +43,14 @@ export class ContadoresService {
     edit(contadores: Contadores): Observable<Contadores> {
       const url = `${this.baseUrl}/${contadores.id}`;
       return this.http.put<Contadores>(url, contadores)
+    }
+
+    delete(contadores: Contadores): Observable<Contadores> {
+      const url = `${this.baseUrl}/${contadores.id}`;
+      return this.http.delete<Contadores>(url)
+    }
+
+    errorHandler(e: any): Observable<any> {
+      return EMPTY;
     }
 }

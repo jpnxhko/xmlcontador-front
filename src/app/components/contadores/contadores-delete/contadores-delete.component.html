@@ -1,1 +1,10 @@
-<p>contadores-delete works!</p>
+<mat-card>
+  <mat-card-title class="title">Deletar Contador</mat-card-title>
+  <mat-card-subtitle class="subtitle">Deseja mesmo deletar o contador?</mat-card-subtitle>
+</mat-card>
+
+<p><br>ID: {{contadores.id}} <br> NOME: {{contadores.nome}} <br></p>
+
+<button mat-raised-button (click)="deletarContadorSnack()" color="accent">Deletar</button>
+
+<button mat-raised-button (click)="cancelaContador()" color="primary">Cancelar</button>

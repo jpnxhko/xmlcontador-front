@@ -3,7 +3,7 @@
   <form>
 
     <mat-form-field>
-      <input matInput placeholder="CPF" [(ngModel)]="contadores.cpf" name="cpf">
+      <input matInput class="form-control" placeholder="CPF" [(ngModel)]="contadores.cpf" name="cpf" pattern="[0-9]*" required>
     </mat-form-field>
 
     <mat-form-field>

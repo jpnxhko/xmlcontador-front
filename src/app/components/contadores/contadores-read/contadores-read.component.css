@@ -8,9 +8,13 @@ table {
 }
 
 .edit > i {
-  color: #d9cd26;
+  color: #2647d9;
 }
 
 .delete > i {
-  color: #e35e6b;
+  color: #b82736
+}
+
+.filter {
+  margin-left: 20px;
 }

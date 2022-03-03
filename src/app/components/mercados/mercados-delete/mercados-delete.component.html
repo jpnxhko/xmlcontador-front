@@ -1,1 +1,10 @@
-<p>mercados-delete works!</p>
+<mat-card>
+  <mat-card-title class="title">Deletar Mercado</mat-card-title>
+  <mat-card-subtitle class="subtitle">Deseja mesmo deletar o mercado?</mat-card-subtitle>
+</mat-card>
+
+<p><br>ID: {{mercados.id}} <br> NOME FANTASIA: {{mercados.nomeFantasia}} <br></p>
+
+<button mat-raised-button (click)="deletarMercadoSnack()" color="accent">Deletar</button>
+
+<button mat-raised-button (click)="cancelarMercado()" color="primary">Cancelar</button>

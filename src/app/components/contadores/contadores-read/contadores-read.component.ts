@@ -11,7 +11,7 @@ import { ContadoresService } from './../contadores.service';
 export class ContadoresReadComponent implements OnInit {
 
   contadores: Contadores[] = [];
-  displayedColumns = ['cpf','nome','contabilidade','email', 'acoes'];
+  displayedColumns = ['id', 'cpf','nome','contabilidade','email', 'acoes'];
 
   constructor(private contadoresService: ContadoresService) { }
 
@@ -21,5 +21,4 @@ export class ContadoresReadComponent implements OnInit {
       console.log(contadores)
     })
   }
-
 }

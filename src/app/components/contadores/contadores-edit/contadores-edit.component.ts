@@ -18,7 +18,10 @@ export class ContadoresEditComponent implements OnInit {
     "email": ""
 }
 
-  constructor(private contadoresService: ContadoresService, private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private contadoresService: ContadoresService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
